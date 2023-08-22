@@ -3,8 +3,8 @@
   "dependencies": {
     "chalk": "^5.2.0",
     "dotenv": "^16.0.3",
-    "faiss-node": "^0.1.1",
-    "langchain": "^0.0.82",
+    "faiss-node": "^0.3.0",
+    "langchain": "^0.0.132",
     "openai": "^3.2.1",
     "pdf-parse": "^1.1.1",
     "pickleparser": "^0.1.0",
