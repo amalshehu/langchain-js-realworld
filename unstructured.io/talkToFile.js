@@ -9,6 +9,8 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
+const embeddings = new OpenAIEmbeddings()
+
 yargs(hideBin(process.argv))
     .command({
         command: 'load',
@@ -31,7 +33,7 @@ yargs(hideBin(process.argv))
                 // strategy: 'hi-res' //experimental
             })
             const docs = await loader.load()
-            const vectorStore = await HNSWLib.fromDocuments(docs, new OpenAIEmbeddings())
+            const vectorStore = await HNSWLib.fromDocuments(docs, embeddings)
 
             await vectorStore.save(argv.saveDir)
             console.log("PDF loaded and data stored.")
@@ -55,7 +57,7 @@ yargs(hideBin(process.argv))
         handler: async (argv) => {
             const startTime = Date.now()
 
-            const loadedVectorStore = await HNSWLib.load(argv.saveDir, new OpenAIEmbeddings())
+            const loadedVectorStore = await HNSWLib.load(argv.saveDir, embeddings)
             const vectorStoreRetriever = loadedVectorStore.asRetriever()
 
             const model = new OpenAI({})
