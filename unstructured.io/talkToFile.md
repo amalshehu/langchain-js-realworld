@@ -7,12 +7,12 @@
 - [🔧 Utilizing the Unstructured Library](#utilizing-the-unstructured-library)
 - [🌍 Environment Variables](#environment-variables)
 - [🚀 Usage](#usage)
-- [🧠 TensorFlow.js Embeddings](#tensorflowjs-embeddings)
-  - [📦 Installation](#installation)
-  - [⚙️ Configuration](#configuration)
 - [📜 Commands](#commands)
   - [📥 Load](#load)
   - [❓ Ask](#ask)
+- [🧠 TensorFlow.js Embeddings](#tensorflowjs-embeddings)
+  - [📦 Installation](#installation)
+  - [⚙️ Configuration](#configuration)
 - [🔍 Examples](#examples)
 - [🌐 Real-World Applications](#real-world-applications)
 
@@ -68,6 +68,45 @@ The `ask` command allows users to query the loaded content and retrieve relevant
 ```bash
 node unstructured.io/talkToFile.js ask --question="Your query here" --saveDir="./path/to/previouslySavedDir"
 ```
+
+Certainly! Let's integrate emojis to make the section more engaging:
+
+---
+
+## 🧠 TensorFlow.js Embeddings
+
+The TensorFlow.js Embeddings integration allows you to compute embeddings directly in your browser or Node.js environment. It leverages the power of TensorFlow.js, ensuring that your data remains local 🛡️ and is not sent to any third-party services. While this offers the advantage of privacy 🔒 and no requirement for API keys, be aware that it may demand more memory and processing power 💻 than other embedding solutions.
+
+### 📦 Installation
+
+To utilize the TensorFlow.js embeddings, you'll need to install several packages:
+
+```bash
+pnpm add @tensorflow/tfjs-core @tensorflow/tfjs-converter @tensorflow/tfjs-backend-cpu
+```
+
+If you're interested in using the sentence-transformers embeddings, install the following package:
+
+```bash
+pnpm add @tensorflow-models/universal-sentence-encoder
+```
+
+### ⚙️ Configuration
+
+In the `unstructured.io/talkToFile.js` file, you can specify the type of embedding you'd like to use. For instance, to use TensorFlow.js embeddings, the relevant imports and initialization would look like this:
+
+```javascript
+import "@tensorflow/tfjs-backend-cpu"
+import { TensorFlowEmbeddings } from "langchain/embeddings/tensorflow"
+
+const embeddings = new TensorFlowEmbeddings()
+```
+
+By setting up and using the appropriate embeddings, you can tailor the performance and functionality to your specific needs.
+
+---
+
+Emojis can make the content more relatable and visually appealing, but it's essential to strike a balance to maintain professionalism, especially in documentation or instructional content.
 
 ## 🔍 Examples
 
