@@ -69,10 +69,6 @@ The `ask` command allows users to query the loaded content and retrieve relevant
 node unstructured.io/talkToFile.js ask --question="Your query here" --saveDir="./path/to/previouslySavedDir"
 ```
 
-Certainly! Let's integrate emojis to make the section more engaging:
-
----
-
 ## 🧠 TensorFlow.js Embeddings
 
 The TensorFlow.js Embeddings integration allows you to compute embeddings directly in your browser or Node.js environment. It leverages the power of TensorFlow.js, ensuring that your data remains local 🛡️ and is not sent to any third-party services. While this offers the advantage of privacy 🔒 and no requirement for API keys, be aware that it may demand more memory and processing power 💻 than other embedding solutions.
@@ -103,10 +99,6 @@ const embeddings = new TensorFlowEmbeddings()
 ```
 
 By setting up and using the appropriate embeddings, you can tailor the performance and functionality to your specific needs.
-
----
-
-Emojis can make the content more relatable and visually appealing, but it's essential to strike a balance to maintain professionalism, especially in documentation or instructional content.
 
 ## 🔍 Examples
 
