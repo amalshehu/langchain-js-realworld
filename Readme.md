@@ -229,11 +229,11 @@ price_value
 text: {text}
 `
 
-const outputParser = StructuredOutputParser.fromZodSchema({
+const outputParser = StructuredOutputParser.fromZodSchema(zod.object({
   gift: zod.boolean(),
   delivery_days: zod.number(),
-  price_value: zod.string(),
-})
+  price_value: zod.array(zod.string()),
+}))
 
 const chat = new OpenAI({ temperature: 0.0 })
 const promptTemplate = PromptTemplate.fromTemplate(reviewTemplate)
